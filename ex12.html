@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediador</title>
+
+    <style>
+body{
+    background-color: grey;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top:20% ;
+}
+#caixa1{
+ margin: 5px;
+ border-radius: 50px;
+ border: 0px solid black;
+}
+#caixa2{
+    margin: 5px;
+ border-radius: 50px;
+ border: 0px solid black;
+}
+#caixa3{
+    margin: 5px;
+ border-radius: 50px;
+ border: 0px solid black;
+}
+#confirma{
+    border: 5px solid rgb(50, 56, 50);
+    background-color: rgb(50, 56, 50);
+    border-radius: 50px;
+    color: white;
+}
+#resultado{
+    font-size: 1.5em;
+    padding: 5px;
+
+}
+
+    </style>
+
+</head>
+<body>
+    <h1>Calcule a média de 3 numeros</h1>
+    <input type="text" id="caixa1">
+    <input type="text" id="caixa2">
+    <input type="text" id="caixa3">
+    <input type="button" value="Calcular Média" id="confirma" onclick="tiramedia()">
+    <div id="resultado"></div>
+
+    <script>
+        function tiramedia(){
+            var v1 = document.getElementById(caixa1)
+            var v2 = document.getElementById(caixa2)
+            var v3 = document.getElementById(caixa3)
+
+            v1 = parseFloat(caixa1.value)
+            v2 = parseFloat(caixa2.value)
+            v3 = parseFloat(caixa3.value)
+
+            res = (v1 + v2 + v3)/3
+            
+
+            resultado.innerHTML = `A media desses valores é igual a ${res.toFixed(2)}`
+
+            if (v1 == 0){
+                resultado.innerHTML = 'Você precisa digitar três numeros diferentes de zero'
+            } else if (v2 == 0){
+                resultado.innerHTML = 'Você precisa digitar três numeros diferentes de zero'
+            } else if(v3 == 0){
+                resultado.innerHTML = 'Você precisa digitar três numeros diferentes de zero'
+            }
+
+
+        }
+    </script>
+
+</body>
+</html>
